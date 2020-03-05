@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM debian:buster
 LABEL maintainer="KevinMeng  kevin_meng@yeah.net"
 
 ENV LANG=C.UTF-8
