@@ -18,7 +18,7 @@ docker run -v $(pwd):/src/notebooks -p 8888:8888 -td anacond:latest
 ```
 
 # Anaconda 镜像中国化
-通过这个镜像，对中国的用户更友好。同过下面三项变化，加速国内安装软件或 Python 包的速度。
+通过这个镜像，对中国的用户更友好。通过下面三项变化，加速国内安装软件或 Python 包的速度。
 
 1. 用清华源替换系统源 
 2. 用阿里云的 pip 镜像 替换默认
