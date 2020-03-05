@@ -14,7 +14,7 @@ RUN apt-get update -qqy &&  apt-get install ca-certificates -y
     #  change the sources.list 
 RUN mv /tmp/sources.list /etc/apt/sources.list  && \
     apt-get update -qqy  && \
-    apt-get install -y wget bzip2 libglib2.0-0 libxext6 libsm6 libxrender1 git mercurial subversion vim && \
+    apt-get install -y wget bzip2 ca-certificates libglib2.0-0 libxext6 libsm6 libxrender1 git mercurial subversion vim && \
     apt-get clean
 
 
