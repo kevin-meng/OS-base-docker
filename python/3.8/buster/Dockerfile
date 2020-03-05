@@ -1,0 +1,16 @@
+FROM python:3.8.2-buster
+LABEL maintainer="KevinMeng  kevin_meng@yeah.net"
+
+ENV LANG=C.UTF-8
+COPY . /tmp/
+
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.backup && \
+    # change the sources to tunghua  source
+    mv /tmp/sources.list /etc/apt/sources.list && \
+    apt-get update -qqy  && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*  && \
+    # change the pip mirror to aliyun
+    pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+
+CMD ["python3"]
