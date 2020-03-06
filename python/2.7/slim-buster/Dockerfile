@@ -14,4 +14,4 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.backup && \
     # change the pip mirror to aliyun
     pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 
-CMD ["python3"]
+CMD ["python2"]
