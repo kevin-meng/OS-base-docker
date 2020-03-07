@@ -14,7 +14,7 @@ docker build -t anacond:latest .
 
 ## run the image
 ```bash
-docker run -v $(pwd):/src/notebooks -p 8888:8888 -td anacond:latest
+docker run -v $(pwd):/src/notebooks -p 8888:8888 -td mengkevin/anaconda:201910
 ```
 
 # Anaconda 镜像中国化
