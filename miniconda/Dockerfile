@@ -1,0 +1,40 @@
+FROM continuumio/miniconda3:4.7.12
+
+LABEL maintainer="KevinMeng  kevin_meng@yeah.net"
+
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV PATH=/opt/conda/bin:$PATH \
+    DEBIAN_FRONTEND=noninteractive \
+    NOTEBOOK_DIR=/src/notebooks \
+    NOTEBOOK_IP=0.0.0.0 \
+    NOTEBOOK_PORT=8888  
+
+
+
+#  In china  change the sources.list well speed up when you download files 
+COPY ./config /tmp/
+RUN apt-get update -qqy &&  apt-get install ca-certificates -y
+    #  change the sources.list 
+RUN mv /tmp/sources.list /etc/apt/sources.list  && \
+    apt-get update -qqy  && \
+    apt-get install -y wget bzip2 ca-certificates libglib2.0-0 libxext6 libsm6 libxrender1 git mercurial subversion vim && \
+    apt-get clean 
+    
+
+
+RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ && \
+    pip install jupyter && \
+    # or 
+    # mv  /tmp/pip.conf ~/.config/pip/pip.conf
+    mv /tmp/.condarc ~/.condarc && \
+    # clean
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+CMD jupyter notebook \
+	--notebook-dir=${NOTEBOOK_DIR} \
+	--ip=${NOTEBOOK_IP} \
+	--port=${NOTEBOOK_PORT} \
+	--NotebookApp.token='' \
+	--no-browser \
+	--allow-root
