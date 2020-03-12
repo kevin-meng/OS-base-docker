@@ -56,6 +56,9 @@ anaconda 提供1个修改为`清华源`后的镜像版本、`pip阿里云`镜像
 - a. 对应 `Anaconda3-2019.10-Linux-x86_64` 版本。 标签：`2019`
 
 
+## 6. Miniconda
+与 Anaconda 类似, 提供1个修改为`清华源`后的镜像版本、`pip阿里云`镜像和`conda 清华镜像`版本 [dockerhub](https://hub.docker.com/repository/docker/mengkevin/miniconda3)
+miniconda3: 标签: `latest`;`4.7.12`
 
 ## 构建与测试
 构建与测试方法如下：
