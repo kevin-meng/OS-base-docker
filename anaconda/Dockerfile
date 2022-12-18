@@ -18,7 +18,7 @@ RUN mv /tmp/sources.list /etc/apt/sources.list  && \
     apt-get clean
 
 
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/anaconda.sh  && \
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh -O ~/anaconda.sh  && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm -rf  ~/anaconda.sh  && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
