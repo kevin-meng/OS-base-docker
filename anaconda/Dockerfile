@@ -17,8 +17,8 @@ RUN mv /tmp/sources.list /etc/apt/sources.list  && \
     apt-get install -y wget bzip2 ca-certificates libglib2.0-0 libxext6 libsm6 libxrender1 git mercurial subversion vim && \
     apt-get clean
 
-
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh -O ~/anaconda.sh  && \
+# anaconda py3.8  https://docs.anaconda.com/free/anaconda/reference/packages/old-pkg-lists/2021.11/py3.8_linux-64/
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh  && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm -rf  ~/anaconda.sh  && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
