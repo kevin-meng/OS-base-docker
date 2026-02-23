@@ -1,4 +1,4 @@
-FROM python:3.12-buster
+FROM python:3.12-bookworm
 LABEL maintainer="KevinMeng  kevin_meng@yeah.net"
 
 ENV LANG=C.UTF-8

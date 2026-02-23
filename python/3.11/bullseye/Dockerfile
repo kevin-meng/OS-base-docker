@@ -1,4 +1,4 @@
-FROM python:3.11-buster
+FROM python:3.11-bullseye
 LABEL maintainer="KevinMeng  kevin_meng@yeah.net"
 
 ENV LANG=C.UTF-8
